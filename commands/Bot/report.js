@@ -32,7 +32,7 @@ module.exports = {
                 collector.stop('fulfilled');
             }
         });
-        const appChannel = client.channels.cache.get('853324726776102914');
+        const appChannel = client.channels.cache.get('888791734698516480');
         collector.on('end', (collected, reason) => {
             if (reason === 'fulfilled') {
                 let index = 1;
