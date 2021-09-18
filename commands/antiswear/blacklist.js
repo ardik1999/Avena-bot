@@ -17,7 +17,7 @@ module.exports = {
 		const query = args[0].toLowerCase();
 		const guild = { Guild: message.guild.id };
 		if (query === 'add') {
-			const word = args[1]?.toLowerCase();
+			const word = args[1].toLowerCase();
 			if (!word) return message.reply('U need to specify a word!');
 
 			Schema.findOne(guild, async (err, data) => {
