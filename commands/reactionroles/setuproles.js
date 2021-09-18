@@ -13,7 +13,7 @@ run: async (client, message, args) => {
     const { guild } = message;
 
         // find the first guild channel mentioned, and remove from args
-        const target_channel = message.mentions?.channels?.first();
+        const target_channel = message.mentions.channels.first();
 
         if (!target_channel) {
             message.reply('error in setuproles : no target channel provided');
@@ -29,7 +29,7 @@ run: async (client, message, args) => {
             const { channel_id, message_id } = setup_data;
 
             // find the setup roles message from pinned messages of channel, and add message to cache
-            const pinned_messages = await guild.channels?.resolve(channel_id).messages?.fetchPinned();
+            const pinned_messages = await guild.channels.resolve(channel_id).messages.fetchPinned();
             const old_message = pinned_messages.get(message_id);
 
             // if message found, delete it
@@ -46,7 +46,7 @@ run: async (client, message, args) => {
         setup_message.pin({reason : 'Jerrai: setup message for assigning roles'})
         .then(stpmsg => {
             // delete PIN_ADD ("pinned a message to this channel")
-            guild.channels?.resolve(target_channel)?.bulkDelete(1);
+            guild.channels.resolve(target_channel).bulkDelete(1);
         });
 
 },
