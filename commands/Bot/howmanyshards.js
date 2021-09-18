@@ -11,7 +11,7 @@ module.exports = {
      * @param {String[]} args 
      */
     run: async(client, message, args) => {
-        if(!message.author.id === "800331322089537538") return;
+        if(!message.author.id === "388274270238932993") return;
         message.channel.send(`Shard id for ${message.guild.name}, Shard #${message.guild.shardID}`)
     }
 }
