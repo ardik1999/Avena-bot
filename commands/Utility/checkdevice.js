@@ -9,7 +9,7 @@ module.exports = {
      */
     run: async(client, message, args) => {
         const user = message.mentions.users.last() || message.author;
-        const devices = user.presence?clientStatus || {};
+        const devices = user.presence.clientStatus || {};
 
         const description = () => {
             if (devices > 1) {
