@@ -8,7 +8,7 @@ client.on('message', async (message) => {
 	let deleting = false;
 	await Promise.all(
 		spliteedMsgs.map((content) => {
-			if (BlacklistedWords.get(message.guild.id)?.includes(content.toLowerCase()))
+			if (BlacklistedWords.get(message.guild.id).includes(content.toLowerCase()))
 				deleting = true;
 		})
 	);
