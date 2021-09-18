@@ -33,7 +33,7 @@ run: async (client, message, args) => {
         console.log(`channel id is ${channel_id} and message id is ${message_id}`);
 
         // find the setup roles message from pinned messages of channel, and add message to cache
-        const pinned_messages  = await guild.channels?.resolve(channel_id).messages?.fetchPinned();
+        const pinned_messages  = await guild.channels.resolve(channel_id).messages.fetchPinned();
         
         console.log(`pinned messages are ${JSON.stringify(pinned_messages)}`);
 
@@ -66,7 +66,7 @@ run: async (client, message, args) => {
                     console.log(`addrole : no permission to add role`);
                     return;
                 }
-                if (member.roles?.cache.get(role.id)) {// if role exists, remove
+                if (member.roles.cache.get(role.id)) {// if role exists, remove
                     console.log(`removing role`);
                     member.roles.remove(role);
                 }
