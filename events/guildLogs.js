@@ -1,6 +1,6 @@
 const client = require('../index');
 const { MessageEmbed } = require('discord.js')
-const logsChannel = '853324729556402187';
+const logsChannel = '888823791629795379';
 
 client.on('guildCreate', (guild) => {
     client.channels.cache.get(logsChannel).send(
