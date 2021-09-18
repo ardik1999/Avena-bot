@@ -40,7 +40,7 @@ module.exports = {
 				message.reply(`Added ${word} as a blacklisted word`);
 			});
 		} else if (query === 'remove') {
-			const word = args[1]?.toLowerCase();
+			const word = args[1].toLowerCase();
 			if (!word) return message.reply('U need to specify a word!');
 
 			Schema.findOne(guild, async (err, data) => {
